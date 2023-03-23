@@ -1,22 +1,21 @@
 {
   "name": "library",
   "version": "1.0.0",
-  "description": "Vanilla JS project for storing and sorting a library book collection",
+  "description": "",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://www.speightashley.github.com/library"
-  },
-  "author": "Ashley Speight",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.36.0",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard": "^17.0.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "^2.8.6"
   }
 }
