@@ -25,6 +25,8 @@ main {
   border: 1px solid blue;
   grid-area: main;
   padding: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
 div.card {
@@ -40,6 +42,19 @@ footer {
 
 aside {
   grid-area: sidebar;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: stretch;
+  text-align: center;
+}
+
+.form {
+  width: 30%;
+  align-self: center;
 }
 
 @media screen and (max-width: 786px) {

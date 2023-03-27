@@ -1,10 +1,22 @@
+const addBookBtn = document.getElementsByClassName("addBook");
+
 let myLibrary = [];
 
 function Book(title, author, length, read) {
   this.title = title;
   this.author = author;
   this.length = length;
-  this.read = true;
+  this.read = read;
 }
 
-function addBookToLibrary() {}
+function addBookToLibrary(obj) {
+  myLibrary.push(obj);
+}
+
+function showForm() {
+  console.log("The button is working");
+}
+
+for (const ele of addBookBtn) {
+  ele.addEventListener("click", showForm);
+}
