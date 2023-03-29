@@ -4,36 +4,104 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="script.js" defer></script>
+    <link
+      href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Library Collection</title>
+
+    <script src="script.js" defer></script>
+    <title>Document</title>
   </head>
   <body>
-    <div class="wrapper">
-      <nav>
-        <ul>
-          <li>Books</li>
-          <li>Authors</li>
-          <li>Recommended</li>
-          <li>Help</li>
-        </ul>
-      </nav>
-      <aside>Details of the book</aside>
-      <main>
-        <div class="card"><button class="addBook">Add a Book</button></div>
-        <div class="form">
-          <form action="post">
-            <label for="bookName">Title</label
-            ><input type="text" name="title" />
-            <label for="author">Author</label
-            ><input type="text" name="author" />
-            <label for="pages">Number of Pages</label
-            ><input type="number" value="25" name="pages" />
-            <input type="submit" />
-          </form>
-        </div>
-      </main>
-      <footer></footer>
+    <div class="container">
+      <h1>My Library</h1>
+      <p>Fill in the form below to add books to the database.</p>
+      <div class="form">
+        <form method="post" id="bookInput">
+          <h1>Add A Book</h1>
+          Title
+          <input
+            type="text"
+            name="title"
+            id="bookTitle"
+            placeholder="Title"
+            required
+          />
+          Author
+          <input
+            type="text"
+            name="author"
+            id="bookAuthor"
+            placeholder="Author"
+            required
+          />
+          Read?
+          <input type="checkbox" name="read" id="bookRead" required />
+          Number of Pages
+          <input
+            type="number"
+            name="pages"
+            id="noPages"
+            required
+            placeholder="Number Of Pages"
+          />
+          ISBN Number
+          <input type="text" name="isbn" id="isbn" placeholder="ISBN Number" />
+          <input type="submit" value="Add Book" />
+        </form>
+      </div>
+      <section>
+        <table>
+          <tr class="controls">
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th><button class="cols">&#9776;</button></th>
+          </tr>
+          <tr>
+            <th>Title <i class="fa fa-fw fa-sort"></i></th>
+            <th>Author<i class="fa fa-fw fa-sort"></i></th>
+            <th>Status<i class="fa fa-fw fa-sort"></i></th>
+            <th class="num">Pages <i class="fa fa-fw fa-sort"></i></th>
+            <th class="progress">Progress<i class="fa fa-fw fa-sort"></i></th>
+            <th class="delete">Delete Book</th>
+          </tr>
+          <tr>
+            <td>Harry Potter</td>
+            <td>JK Rowling</td>
+            <td class="readStatus"><button id="read">Read</button></td>
+            <td class="num">356</td>
+            <td class="progress">
+              <progress id="potter" max="100" value="20"></progress>
+            </td>
+
+            <td class="delete"><button>X</button></td>
+          </tr>
+          <tr>
+            <td>Mr Nice</td>
+            <td>Howard Marks</td>
+            <td class="readStatus"><button id="notRead">Not Read</button></td>
+            <td class="num">250</td>
+            <td class="progress">
+              <progress id="nice" max="100" value="60"></progress>
+            </td>
+            <td class="delete"><button>X</button></td>
+          </tr>
+          <tr>
+            <td>Prison best prisoners</td>
+            <td>Jamie Oliver</td>
+            <td class="readStatus"><button id="reading">Reading</button></td>
+            <td class="num">544</td>
+            <td class="progress">
+              <progress id="prison" max="100" value="10"></progress>
+            </td>
+            <td class="delete"><button>X</button></td>
+          </tr>
+        </table>
+      </section>
     </div>
   </body>
 </html>
