@@ -31,6 +31,7 @@ body {
 .container {
   min-height: 100vh;
   width: 1200px;
+
   /* border: 1px solid black; */
 }
 
@@ -45,7 +46,7 @@ table {
   padding: 25px;
   margin: 25px;
   /* border: 1px solid green; */
-  width: 900px;
+  width: 1200px;
   background-color: var(--table-background);
   border: 1px solid var(--table-border);
   border-collapse: collapse;
@@ -94,6 +95,11 @@ tr.controls th {
 button {
   font-weight: bold;
   padding: 2px;
+  background-color: var(--controls);
+  border-radius: 20px;
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
 }
 
 button#read {
@@ -172,9 +178,9 @@ div.form {
   margin-right: auto;
   width: 400px;
   border-radius: 20px;
-
-  display: none;
+  z-index: 1;
 }
+
 form {
   width: 400px;
   display: flex;
@@ -188,13 +194,63 @@ form {
 
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.19);
 }
-
+form.hide {
+  display: none;
+}
 form > h1 {
   text-align: center;
+  margin-top: -25px;
 }
 
-label {
-  width: 100%;
+input,
+select {
+  height: 40px;
+  padding: 2px;
+  background-color: var(--background-color);
+}
+
+fieldset {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0;
+}
+input[type="checkbox"] {
+  display: inline;
+  width: 10%;
+  display: block;
+  accent-color: var(--controls);
+  margin-top: 10px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #2f3f7a;
+  color: #c4363d;
+  border: 2px solid var(--not-read-text);
+}
+
+input[type="submit"],
+input[type="button"] {
+  width: 45%;
+  height: 48px;
+  display: inline;
+  background-color: var(--controls);
+  border-radius: 50px;
+  border-left-style: ridge;
+}
+
+span {
+  margin-top: 15px;
+}
+
+span.buttons {
+  display: flex;
+  margin-top: 25px;
+  justify-content: space-between;
+}
+
+.blur {
+  filter: blur(8px);
 }
 
 /* td:nth-child(2),

@@ -15,43 +15,63 @@
   </head>
   <body>
     <div class="container">
-      <h1>My Library</h1>
-      <p>Fill in the form below to add books to the database.</p>
-      <div class="form">
-        <form method="post" id="bookInput">
+      <header id="header">
+        <h1>My Library</h1>
+        <button id="addBook" class="button">Add A Book</button>
+      </header>
+      <div class="form" id="form">
+        <form method="get" action="" id="bookInput" class="hide">
           <h1>Add A Book</h1>
-          Title
+
+          <span>Title</span>
           <input
             type="text"
             name="title"
             id="bookTitle"
             placeholder="Title"
+            minlength="5"
             required
           />
-          Author
+
+          <span>Author</span>
           <input
             type="text"
             name="author"
             id="bookAuthor"
             placeholder="Author"
             required
+            minlength="3"
           />
-          Read?
-          <input type="checkbox" name="read" id="bookRead" required />
-          Number of Pages
+          <span> Number of Pages </span>
           <input
             type="number"
             name="pages"
-            id="noPages"
+            id="bookLength"
             required
             placeholder="Number Of Pages"
+            min="1"
           />
-          ISBN Number
+          <span> Status</span>
+
+          <select name="status" id="status">
+            <option value="read">Read</option>
+            <option value="reading">Reading</option>
+            <option value="notRead">Not Read</option>
+          </select>
+
+          <span> ISBN Number</span>
+
           <input type="text" name="isbn" id="isbn" placeholder="ISBN Number" />
-          <input type="submit" value="Add Book" />
+          <span class="buttons">
+            <input type="submit" value="Add Book" id="adder" /><input
+              type="button"
+              value="Cancel"
+              id="cancel"
+          /></span>
         </form>
       </div>
-      <section>
+
+      <section id="mainContent">
         <table>
           <tr class="controls">
             <th></th>
@@ -59,9 +79,11 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
             <th><button class="cols">&#9776;</button></th>
           </tr>
-          <tr>
+          <tr id="headings">
+            <th class="num">ID</th>
             <th>Title <i class="fa fa-fw fa-sort"></i></th>
             <th>Author<i class="fa fa-fw fa-sort"></i></th>
             <th>Status<i class="fa fa-fw fa-sort"></i></th>
@@ -69,37 +91,42 @@
             <th class="progress">Progress<i class="fa fa-fw fa-sort"></i></th>
             <th class="delete">Delete Book</th>
           </tr>
-          <tr>
-            <td>Harry Potter</td>
-            <td>JK Rowling</td>
-            <td class="readStatus"><button id="read">Read</button></td>
-            <td class="num">356</td>
-            <td class="progress">
-              <progress id="potter" max="100" value="20"></progress>
-            </td>
+          <tbody id="tableContent">
+            <tr>
+              <td>0</td>
+              <td>Harry Potter</td>
+              <td>JK Rowling</td>
+              <td class="readStatus"><button id="read">Read</button></td>
+              <td class="num">356</td>
+              <td class="progress">
+                <progress id="potter" max="100" value="20"></progress>
+              </td>
 
-            <td class="delete"><button>X</button></td>
-          </tr>
-          <tr>
-            <td>Mr Nice</td>
-            <td>Howard Marks</td>
-            <td class="readStatus"><button id="notRead">Not Read</button></td>
-            <td class="num">250</td>
-            <td class="progress">
-              <progress id="nice" max="100" value="60"></progress>
-            </td>
-            <td class="delete"><button>X</button></td>
-          </tr>
-          <tr>
-            <td>Prison best prisoners</td>
-            <td>Jamie Oliver</td>
-            <td class="readStatus"><button id="reading">Reading</button></td>
-            <td class="num">544</td>
-            <td class="progress">
-              <progress id="prison" max="100" value="10"></progress>
-            </td>
-            <td class="delete"><button>X</button></td>
-          </tr>
+              <td class="delete"><button>X</button></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>Mr Nice</td>
+              <td>Howard Marks</td>
+              <td class="readStatus"><button id="notRead">Not Read</button></td>
+              <td class="num">250</td>
+              <td class="progress">
+                <progress id="nice" max="100" value="60"></progress>
+              </td>
+              <td class="delete"><button>X</button></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Prison best prisoners</td>
+              <td>Jamie Oliver</td>
+              <td class="readStatus"><button id="reading">Reading</button></td>
+              <td class="num">544</td>
+              <td class="progress">
+                <progress id="prison" max="100" value="10"></progress>
+              </td>
+              <td class="delete"><button>X</button></td>
+            </tr>
+          </tbody>
         </table>
       </section>
     </div>

@@ -1,0 +1,12 @@
+add book form >
+
+If status is set to read, adjust progress bar to have 100 value
+if status is set to reading, show a number box for how many pages read
+if status is set to not read, set progress bar to 0
+
+Status on table >
+
+Set inner text and class to the same as the id of the select
+
+form validation >
+Check for empty title, empty author, empty number of pages
