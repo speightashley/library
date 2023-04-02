@@ -250,7 +250,7 @@ span.buttons {
 }
 
 .blur {
-  filter: blur(8px);
+  filter: blur(5px);
 }
 
 /* td:nth-child(2),

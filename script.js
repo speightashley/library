@@ -13,7 +13,22 @@ const status = document.getElementById("status");
 
 const headings = document.getElementById("tableContent");
 
-let myLibrary = [];
+let myLibrary = [
+  {
+    id: 0,
+    title: "Harry Potter",
+    author: "JK Rowling",
+    length: "500",
+    status: "reading",
+  },
+  {
+    id: 1,
+    title: "Mr Nice",
+    author: "Howard Marks",
+    length: "250",
+    status: "notRead",
+  },
+];
 
 function Book(title, author, length, status) {
   this.id = myLibrary.length;
@@ -34,7 +49,12 @@ function addBookToLibrary() {
   addRow(newBook);
 }
 
+myLibrary.forEach((element) => {
+  addRow(element);
+});
+
 function addRow(book) {
+  let delBtn = document.createElement("button");
   let row = document.createElement("tr");
 
   let id = document.createElement("td");
@@ -48,6 +68,8 @@ function addRow(book) {
   let statusButton = document.createElement("button");
 
   statusButton.id = book.status;
+  del.className = "delete";
+  del.appendChild(delBtn);
 
   pages.className = "readStatus";
   pages.className = "num";
@@ -56,7 +78,7 @@ function addRow(book) {
   author.innerText = book.author;
   title.innerText = book.title;
   pages.innerText = book.length;
-  del.innerText = "X";
+  delBtn.innerText = "X";
   progress.innerHTML = `<progress max="${book.length}" value="${book.length}" ></progress>`; // Todo - Need to create an input for number of pages read
 
   status.appendChild(statusButton);
@@ -87,6 +109,8 @@ function toggleForm() {
   header.classList.toggle("blur");
   mainContent.classList.toggle("blur");
 }
+
+status.addEventListener("");
 
 cancelBtn.addEventListener("click", toggleForm);
 addBook.addEventListener("click", toggleForm);
